@@ -1,5 +1,32 @@
 #pragma once
-class MainWindow
+#include "wx/wx.h"
+
+class MainWindow : public wxFrame
 {
+public:
+	MainWindow();
+	~MainWindow();
+public:
+	int nFieldWidth = 10;
+	int nFieldHeight = 10;
+	wxButton* btnDigit1 = nullptr;
+	wxButton* btnDigit2 = nullptr;
+	wxButton* btnDigit3 = nullptr;
+	wxButton* btnDigit4 = nullptr;
+	wxButton* btnDigit5 = nullptr;
+	wxButton* btnDigit6 = nullptr;
+	wxButton* btnDigit7 = nullptr;
+	wxButton* btnDigit8 = nullptr;
+	wxButton* btnDigit9 = nullptr;
+	wxButton* btnDigit0 = nullptr;
+	//wxButton** btn;
+	wxTextCtrl *txtBox = nullptr;
+	int* nField = nullptr;
+	bool bFirstClick = true;
+
+	void OnButtonClicked(wxCommandEvent& evt);
+	wxDECLARE_EVENT_TABLE();
+	
 };
+
 
