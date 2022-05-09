@@ -19,6 +19,21 @@ public:
 	wxButton* btnDigit8 = nullptr;
 	wxButton* btnDigit9 = nullptr;
 	wxButton* btnDigit0 = nullptr;
+
+	wxButton* btnPlus = nullptr;
+	wxButton* btnSubtract = nullptr;
+	wxButton* btnMultiply = nullptr;
+	wxButton* btnDivide = nullptr;
+	wxButton* btnMod = nullptr;
+
+	wxButton* btnEqual = nullptr;
+	wxButton* btnNegate = nullptr;
+
+	wxButton* btnClear = nullptr;
+	wxButton* btnHex = nullptr;
+	wxButton* btnDecimal = nullptr;
+	wxButton* btnBinary = nullptr;
+
 	//wxButton** btn;
 	wxTextCtrl *txtBox = nullptr;
 	int* nField = nullptr;

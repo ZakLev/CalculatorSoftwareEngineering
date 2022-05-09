@@ -7,16 +7,32 @@ wxEND_EVENT_TABLE()
 MainWindow::MainWindow() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(30, 30), wxSize(800, 600))
 {
 	txtBox = new wxTextCtrl(this, wxID_ANY, "", wxPoint(150, 10), wxSize(500, 200));
-	btnDigit1 = new wxButton(this, wxID_ANY, "", wxPoint(250,250),wxSize(75,75));
-	btnDigit2 = new wxButton(this, wxID_ANY, "", wxPoint(325, 250), wxSize(75, 75));
-	btnDigit3 = new wxButton(this, wxID_ANY, "", wxPoint(400, 250), wxSize(75, 75));
-	btnDigit4 = new wxButton(this, wxID_ANY, "", wxPoint(250, 325), wxSize(75, 75));
-	btnDigit5 = new wxButton(this, wxID_ANY, "", wxPoint(325, 325), wxSize(75, 75));
-	btnDigit6 = new wxButton(this, wxID_ANY, "", wxPoint(400, 325), wxSize(75, 75));
-	btnDigit7 = new wxButton(this, wxID_ANY, "", wxPoint(250, 400), wxSize(75, 75));
-	btnDigit8 = new wxButton(this, wxID_ANY, "", wxPoint(325, 400), wxSize(75, 75));
-	btnDigit9 = new wxButton(this, wxID_ANY, "", wxPoint(400, 400), wxSize(75, 75));
-	btnDigit0 = new wxButton(this, wxID_ANY, "", wxPoint(325, 475), wxSize(75, 75));
+	btnDigit1 = new wxButton(this, wxID_ANY, "1", wxPoint(250,250),wxSize(75,75));
+	btnDigit2 = new wxButton(this, wxID_ANY, "2", wxPoint(325, 250), wxSize(75, 75));
+	btnDigit3 = new wxButton(this, wxID_ANY, "3", wxPoint(400, 250), wxSize(75, 75));
+	btnDigit4 = new wxButton(this, wxID_ANY, "4", wxPoint(250, 325), wxSize(75, 75));
+	btnDigit5 = new wxButton(this, wxID_ANY, "5", wxPoint(325, 325), wxSize(75, 75));
+	btnDigit6 = new wxButton(this, wxID_ANY, "6", wxPoint(400, 325), wxSize(75, 75));
+	btnDigit7 = new wxButton(this, wxID_ANY, "7", wxPoint(250, 400), wxSize(75, 75));
+	btnDigit8 = new wxButton(this, wxID_ANY, "8", wxPoint(325, 400), wxSize(75, 75));
+	btnDigit9 = new wxButton(this, wxID_ANY, "9", wxPoint(400, 400), wxSize(75, 75));
+	btnDigit0 = new wxButton(this, wxID_ANY, "0", wxPoint(325, 475), wxSize(75, 75));
+
+	btnPlus = new wxButton(this, wxID_ANY, "+", wxPoint(675, 25), wxSize(100,100));
+	btnSubtract = new wxButton(this, wxID_ANY, "-", wxPoint(675, 125), wxSize(100, 100));
+	btnMultiply = new wxButton(this, wxID_ANY, "*", wxPoint(675, 225), wxSize(100, 100));
+	btnDivide = new wxButton(this, wxID_ANY, "/", wxPoint(675, 325), wxSize(100, 100));
+	btnMod = new wxButton(this, wxID_ANY, "%", wxPoint(675, 425), wxSize(100, 100));
+
+	btnNegate = new wxButton(this, wxID_ANY, "Negate", wxPoint(525, 300), wxSize(100, 100));
+	btnEqual = new wxButton(this, wxID_ANY, "=", wxPoint(525, 425), wxSize(100, 100));
+
+	btnClear = new wxButton(this, wxID_ANY, "Clear", wxPoint(25,400), wxSize(100, 100));
+
+	btnBinary = new wxButton(this, wxID_ANY, "Binary", wxPoint(25, 100), wxSize(100, 100));
+	btnHex = new wxButton(this, wxID_ANY, "Hex", wxPoint(25, 200), wxSize(100, 100));
+	btnDecimal = new wxButton(this, wxID_ANY, "Dec", wxPoint(25, 300), wxSize(100, 100));
+
 	/*btn = new wxButton * [nFieldWidth * nFieldHeight];
 	
 	wxGridSizer* grid = new wxGridSizer(nFieldWidth, nFieldHeight, 0, 0);
