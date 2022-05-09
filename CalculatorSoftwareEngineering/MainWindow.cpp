@@ -6,6 +6,7 @@ wxEND_EVENT_TABLE()
 
 MainWindow::MainWindow() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(30, 30), wxSize(800, 600))
 {
+	wxFont font(24, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD, false);
 	txtBox = new wxTextCtrl(this, wxID_ANY, "", wxPoint(150, 10), wxSize(500, 200));
 	btnDigit1 = new wxButton(this, wxID_ANY, "1", wxPoint(250,250),wxSize(75,75));
 	btnDigit2 = new wxButton(this, wxID_ANY, "2", wxPoint(325, 250), wxSize(75, 75));
