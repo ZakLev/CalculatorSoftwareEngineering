@@ -133,6 +133,33 @@ void MainWindow::OnButtonClicked(wxCommandEvent& evt)
 		}
 
 	}
+	switch (id)
+	{
+	case 10016:
+	{
+		break;
+	}
+	case 10017:
+	{
+		break;
+	}
+	case 10018:
+	{
+		break;
+	}
+	case 10019:
+	{
+		break;
+	}
+	case 10020:
+	{
+		break;
+	}
+	case 10021:
+	{
+		break;
+	}
+	}
 	/*int id = evt.GetId();
 	wxButton* button = nullptr;
 	wxString label = std::to_string(id + 2);
