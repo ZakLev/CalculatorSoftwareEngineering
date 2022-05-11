@@ -133,6 +133,7 @@ void MainWindow::OnButtonClicked(wxCommandEvent& evt)
 		}
 
 	}
+	//Extra switches for other buttons
 	switch (id)
 	{
 	case 10016:
