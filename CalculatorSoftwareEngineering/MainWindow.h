@@ -36,6 +36,8 @@ public:
 
 	//wxButton** btn;
 	wxTextCtrl *txtBox = nullptr;
+	//wxString* txtLabel = nullptr;
+	wxString txtLabel = "";
 	int* nField = nullptr;
 	bool bFirstClick = true;
 

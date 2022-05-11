@@ -15,5 +15,6 @@ bool Main::OnInit()
 {
 	mainWindow = new MainWindow();
 	mainWindow->Show();
+	mainWindow->SetBackgroundColour(wxColour("#2F380B"));
 	return true;
 }
