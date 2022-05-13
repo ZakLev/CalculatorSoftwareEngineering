@@ -10,7 +10,6 @@ Main::Main()
 Main::~Main()
 {
 }
-
 bool Main::OnInit()
 {
 	mainWindow = new MainWindow();

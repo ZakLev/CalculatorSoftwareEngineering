@@ -41,7 +41,8 @@ public:
 	int* nField = nullptr;
 	bool bFirstClick = true;
 
-	void OnButtonClicked(wxCommandEvent& evt);
+	virtual void OnButtonClicked(wxCommandEvent& evt);
+	void  OnButtonClicked();
 	wxDECLARE_EVENT_TABLE();
 	
 };
