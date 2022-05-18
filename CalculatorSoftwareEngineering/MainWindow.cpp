@@ -1,5 +1,6 @@
 #include "MainWindow.h"
 #include "ButtonFactory.h"
+#include "CalculatorProcessor.h"
 
 wxBEGIN_EVENT_TABLE(MainWindow, wxFrame)
 EVT_BUTTON(10001, OnButtonClicked)
@@ -114,6 +115,13 @@ MainWindow::MainWindow() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(30, 
 	btnHex = BF.CreateAddButton(this, 10020, "Hex", wxPoint(25, 125), wxSize(100, 100), wxColour("#69229F"));
 	btnDecimal = BF.CreateAddButton(this, 10021, "Dec", wxPoint(25, 225), wxSize(100, 100), wxColour("#9E58D4"));
 
+	/*btnPlus->Disable();
+	btnSubtract->Disable();
+	btnMultiply->Disable();
+	btnDivide->Disable();
+	btnMod->Disable();*/
+	
+	CalculatorProcessor* processor = CalculatorProcessor::GetInstance();
 	
 }
 MainWindow::~MainWindow()
@@ -127,7 +135,7 @@ MainWindow::~MainWindow()
 	evt.GetEventObject();
 	wxButton* temp = (wxButton*)evt.GetEventObject();
 	
-	for (int x = 1; x < 16; x++) // Doesnt print beyond signs and numbers
+	for (int x = 1; x < 11; x++) // Doesnt print beyond signs and numbers
 	{
 		if (x + 10000 == id)
 		{
@@ -135,9 +143,24 @@ MainWindow::~MainWindow()
 			wxString label = temp->GetLabel();
 			txtLabel.append(label);
 			txtBox->SetLabel(txtLabel);
+			bFirstClick = false;
+			
 		}
 
 	}
+	for (int x = 11; x < 16; x++) // Doesnt print beyond signs and numbers
+	{
+		if (x + 10000 == id)
+		{
+
+			wxString label = temp->GetLabel();
+			txtLabel.append(label);
+			txtBox->SetLabel(txtLabel);
+		}
+		
+
+	}
+
 	//Extra switches for other buttons
 	switch (id)
 	{

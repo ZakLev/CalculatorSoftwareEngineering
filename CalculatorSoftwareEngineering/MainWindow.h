@@ -40,6 +40,7 @@ public:
 	wxString txtLabel = "";
 	int* nField = nullptr;
 	bool bFirstClick = true;
+	//CalculatorProcessor* CalculatorProcessor::instance = nullptr;
 
 	virtual void OnButtonClicked(wxCommandEvent& evt);
 	void  OnButtonClicked();
