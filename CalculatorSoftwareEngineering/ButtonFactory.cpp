@@ -1,5 +1,5 @@
 #include "ButtonFactory.h"
-#include "MainWindow.h"
+//#include "MainWindow.h"
 
 //wxBEGIN_EVENT_TABLE(MainWindow, wxFrame)
 //wxEND_EVENT_TABLE()
