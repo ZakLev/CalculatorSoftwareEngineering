@@ -1,5 +1,6 @@
 #pragma once
 #include "wx/wx.h"
+#include "CalculatorProcessor.h"
 
 class MainWindow : public wxFrame
 {
@@ -38,10 +39,17 @@ public:
 	wxTextCtrl *txtBox = nullptr;
 	//wxString* txtLabel = nullptr;
 	wxString txtLabel = "";
+	wxString numHolder = "";
 	int* nField = nullptr;
 	bool bFirstClick = true;
 	//CalculatorProcessor* CalculatorProcessor::instance = nullptr;
-
+	CalculatorProcessor* CalcProc = CalculatorProcessor::GetInstance();
+	wxString oper = "";
+	float sum = 0;
+	float num1 = 0;
+	float num2 = 0;
+	std::vector<float> NumVectors;
+	std::vector<wxString> Operators;
 	virtual void OnButtonClicked(wxCommandEvent& evt);
 	void  OnButtonClicked();
 	wxDECLARE_EVENT_TABLE();
