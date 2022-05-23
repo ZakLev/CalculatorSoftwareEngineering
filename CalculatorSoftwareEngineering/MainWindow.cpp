@@ -309,8 +309,23 @@ void MainWindow::OnButtonClicked(wxCommandEvent& evt)
 		}
 		break;
 	}
-	case 10018:
+	case 10018: // Clear Button
 	{
+		txtLabel = "";
+		txtBox->SetLabel(txtLabel);
+		numHolder = txtLabel;
+
+		num2 = 0;
+		num1 = 0;
+		sum = 0;
+		NumVectors.clear();
+
+		btnPlus->Disable();
+		btnSubtract->Disable();
+		btnMultiply->Disable();
+		btnDivide->Disable();
+		btnMod->Disable();
+
 		break;
 	}
 	case 10019:
