@@ -19,16 +19,28 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AddCommand.h" />
     <ClInclude Include="ButtonFactory.h" />
     <ClInclude Include="CalculatorProcessor.h" />
+    <ClInclude Include="DivisionCommand.h" />
+    <ClInclude Include="IBaseCommand.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="MainWindow.h" />
+    <ClInclude Include="ModCommand.h" />
+    <ClInclude Include="MultipyCommand.h" />
+    <ClInclude Include="SubtractCommand.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AddCommand.cpp" />
     <ClCompile Include="ButtonFactory.cpp" />
     <ClCompile Include="CalculatorProcessor.cpp" />
+    <ClCompile Include="DivisionCommand.cpp" />
+    <ClCompile Include="IBaseCommand.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MainWindow.cpp" />
+    <ClCompile Include="ModCommand.cpp" />
+    <ClCompile Include="MultipyCommand.cpp" />
+    <ClCompile Include="SubtractCommand.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

@@ -224,6 +224,44 @@ void MainWindow::OnButtonClicked(wxCommandEvent& evt)
 		if (NumVectors.size() >= 2) {
 			while (NumVectors.size() >= 2)
 			{
+				if (sum != 0)
+				{
+					num1 = sum;
+				}
+				else
+				{
+					num1 = NumVectors.front();
+					NumVectors.erase(NumVectors.begin());
+				}
+				num2 = NumVectors.front();
+				NumVectors.erase(NumVectors.begin());
+				wxString _oper = Operators.back();
+				Operators.front();
+				Operators.erase(Operators.begin());
+				if (_oper == "+")
+				{
+				 CalcProc->Addition(num1, num2);
+				}
+				else if (_oper == "-")
+				{
+					CalcProc->Subtraction(num1, num2);
+				}
+				else if (_oper == "*")
+				{
+					CalcProc->Multiply(num1, num2);
+				}
+				else if (_oper == "/")
+				{
+					 CalcProc->Division(num1, num2);
+				}
+				else if (_oper == "%")
+				{
+					CalcProc->Mod(num1, num2);
+				}
+				sum = CalcProc->Sum();
+			}
+			/*while (NumVectors.size() >= 2)
+			{
 
 				num1 = NumVectors.back();
 				NumVectors.pop_back();
@@ -253,7 +291,7 @@ void MainWindow::OnButtonClicked(wxCommandEvent& evt)
 					sum = CalcProc->Mod(num1, num2);
 				}
 				NumVectors.emplace_back(sum);
-			}
+			}*/
 			txtLabel = (wxString)std::to_string(sum);
 			txtBox->SetLabel(txtLabel);
 			numHolder = txtLabel;
