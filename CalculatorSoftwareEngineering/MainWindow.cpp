@@ -207,8 +207,27 @@ void MainWindow::OnButtonClicked(wxCommandEvent& evt)
 	{
 		break;
 	}*/
-	case 10016:
+	case 10016: // Negate
 	{
+		if (numHolder != "") 
+		{
+			if (numHolder[0] == '-')
+			{
+				txtLabel.Remove(txtLabel.size() - numHolder.size());
+
+				numHolder.Remove(0,1);
+			}
+			else
+			{
+				//wxString temp = numHolder;
+				txtLabel.Remove(txtLabel.size() - numHolder.size());
+				numHolder = "-" + numHolder;
+
+
+			}
+			txtLabel += numHolder;
+			txtBox->SetLabel(txtLabel);
+		}
 		break;
 	}
 	case 10017:
