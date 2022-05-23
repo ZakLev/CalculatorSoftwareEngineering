@@ -186,7 +186,7 @@ void MainWindow::OnButtonClicked(wxCommandEvent& evt)
 	//Extra switches for other buttons
 	switch (id)
 	{
-	/*case 10011:
+	/*case 10011://
 	{
 
 		break;
