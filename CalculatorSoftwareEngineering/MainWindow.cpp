@@ -322,7 +322,8 @@ void MainWindow::OnButtonClicked(wxCommandEvent& evt)
 			{
 			case 1:
 				//std::bitset<sizeof(float)* CHAR_BIT> bits(sum);
-				txtLabel = std::bitset<8>(128).to_string();
+				txtLabel = std::bitset<16>(128).to_string();
+
 				txtBox->SetLabel(txtLabel);
 				break;
 			case 2:
