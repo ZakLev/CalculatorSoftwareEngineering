@@ -379,7 +379,7 @@ void MainWindow::OnButtonClicked(wxCommandEvent& evt)
 	}
 	case 10019://bin
 	{
-		type = 1;
+		type = CalcProc->Bin();
 		btnBinary->Disable();
 		btnHex->Enable();
 		btnDecimal->Enable();
@@ -387,7 +387,7 @@ void MainWindow::OnButtonClicked(wxCommandEvent& evt)
 	}
 	case 10020://hex
 	{
-		type = 2;
+		type = CalcProc->Hex();
 		btnBinary->Enable();
 		btnHex->Disable();
 		btnDecimal->Enable();
@@ -395,7 +395,7 @@ void MainWindow::OnButtonClicked(wxCommandEvent& evt)
 	}
 	case 10021://dec
 	{
-		type = 3;
+		type = CalcProc->Dec();
 		btnBinary->Enable();
 		btnHex->Enable();
 		btnDecimal->Disable();

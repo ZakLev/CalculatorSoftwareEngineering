@@ -25,6 +25,9 @@ public:
 	void Multiply(float num1, float num2);
 	void Division(float num1, float num2);
 	void Mod(float num1, float num2);
+	int Hex();
+	int Dec();
+	int Bin();
 	float Sum();
 	std::vector<IBaseCommand*> Operators;
 };
