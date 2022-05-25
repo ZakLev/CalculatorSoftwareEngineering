@@ -1,6 +1,8 @@
 #include "MainWindow.h"
 #include "ButtonFactory.h"
 #include "CalculatorProcessor.h"
+#include <bitset>
+#include <sstream>
 
 wxBEGIN_EVENT_TABLE(MainWindow, wxFrame)
 EVT_BUTTON(10001, OnButtonClicked)
@@ -120,7 +122,7 @@ MainWindow::MainWindow() : wxFrame(nullptr, wxID_ANY, "Calculator", wxPoint(30, 
 	btnMultiply->Disable();
 	btnDivide->Disable();
 	btnMod->Disable();
-
+	btnDecimal->Disable();
 
 
 }
@@ -131,9 +133,11 @@ MainWindow::~MainWindow()
 
 void MainWindow::OnButtonClicked(wxCommandEvent& evt)
 {
+	
 	int id = evt.GetId();
 	evt.GetEventObject();
 	wxButton* temp = (wxButton*)evt.GetEventObject();
+	std::stringstream hex;
 
 	for (int x = 1; x < 11; x++) // Doesnt print beyond signs and numbers
 	{
@@ -151,6 +155,7 @@ void MainWindow::OnButtonClicked(wxCommandEvent& evt)
 			btnMultiply->Enable();
 			btnDivide->Enable();
 			btnMod->Enable();
+			
 
 		}
 
@@ -207,8 +212,27 @@ void MainWindow::OnButtonClicked(wxCommandEvent& evt)
 	{
 		break;
 	}*/
-	case 10016:
+	case 10016: // Negate
 	{
+		if (numHolder != "") 
+		{
+			if (numHolder[0] == '-')
+			{
+				txtLabel.Remove(txtLabel.size() - numHolder.size());
+
+				numHolder.Remove(0,1);
+			}
+			else
+			{
+				//wxString temp = numHolder;
+				txtLabel.Remove(txtLabel.size() - numHolder.size());
+				numHolder = "-" + numHolder;
+
+
+			}
+			txtLabel += numHolder;
+			txtBox->SetLabel(txtLabel);
+		}
 		break;
 	}
 	case 10017:
@@ -293,8 +317,29 @@ void MainWindow::OnButtonClicked(wxCommandEvent& evt)
 				NumVectors.emplace_back(sum);
 			}*/
 			txtLabel = (wxString)std::to_string(sum);
-			txtBox->SetLabel(txtLabel);
 			numHolder = txtLabel;
+			switch (type)
+			{
+			case 1:
+				//std::bitset<sizeof(float)* CHAR_BIT> bits(sum);
+				txtLabel = std::bitset<8>(128).to_string();
+				txtBox->SetLabel(txtLabel);
+				break;
+			case 2:
+				
+				hex << std::hex <<(int)sum;
+				txtLabel = hex.str();
+				txtBox->SetLabel(txtLabel);
+				hex.clear();
+				break;
+			case 3 :
+				txtBox->SetLabel(txtLabel);
+				break;
+			default:
+				break;
+			}
+			
+			
 
 			num2 = 0;
 			num1 = 0;
@@ -307,6 +352,10 @@ void MainWindow::OnButtonClicked(wxCommandEvent& evt)
 			btnDivide->Enable();
 			btnMod->Enable();
 		}
+		else
+		{
+
+}
 		break;
 	}
 	case 10018: // Clear Button
@@ -328,16 +377,28 @@ void MainWindow::OnButtonClicked(wxCommandEvent& evt)
 
 		break;
 	}
-	case 10019:
+	case 10019://bin
 	{
+		type = CalcProc->Bin();
+		btnBinary->Disable();
+		btnHex->Enable();
+		btnDecimal->Enable();
 		break;
 	}
-	case 10020:
+	case 10020://hex
 	{
+		type = CalcProc->Hex();
+		btnBinary->Enable();
+		btnHex->Disable();
+		btnDecimal->Enable();
 		break;
 	}
-	case 10021:
+	case 10021://dec
 	{
+		type = CalcProc->Dec();
+		btnBinary->Enable();
+		btnHex->Enable();
+		btnDecimal->Disable();
 		break;
 	}
 	}

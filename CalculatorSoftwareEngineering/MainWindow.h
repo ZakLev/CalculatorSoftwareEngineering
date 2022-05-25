@@ -48,6 +48,7 @@ public:
 	float sum = 0;
 	float num1 = 0;
 	float num2 = 0;
+	int type = 3;
 	std::vector<float> NumVectors;
 	std::vector<wxString> Operators;
 	virtual void OnButtonClicked(wxCommandEvent& evt);
