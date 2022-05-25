@@ -60,6 +60,19 @@ void CalculatorProcessor::Mod(float num1, float num2)
 	Operators.push_back(com);
 	//return (float)((int)num1 % (int)num2);
 }
+int CalculatorProcessor::Hex()
+{
+	return 2;
+}
+int CalculatorProcessor::Dec()
+{
+	return 3;
+}
+int CalculatorProcessor::Bin()
+{
+	
+	return 1;
+}
 float CalculatorProcessor::Sum()
 {
 	float sum = 0.0f;
